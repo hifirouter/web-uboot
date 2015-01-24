@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li><a href="upgrade.html">Firmware Upgrade</a></li>
+            	<li><a href="clock.html">Overclocking</a></li>
+            	<li><a href="mac.html">MAC Address</a></li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li><a href="backup.html">Firmware Backup</a></li>
+            	<li class="current_nav">Network Console</li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div id="page">
+        	<form>
+            	<label>Port:</label> <input name="port" id="port" size="5" maxlength="5" value="<%=port%>" />
+                <div id="freq_notice">
+                	Notice: Network console uses UDP protocol to communicate with clients.<br />
+                    Please use tools like <strong>Hercules SETUP Utility</strong> to connect.
+                </div>
+                <div class="operate">
+                    <button type="submit" name="submit" value="Start">Start</button>
+                </div>
+            </form>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>

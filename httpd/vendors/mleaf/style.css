@@ -1,0 +1,198 @@
+body {
+	font-family: 'Microsoft YaHei', Arial, 'Courier New';
+	line-height: 1.5em;
+	color: #7F7F7F;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+#container {
+	width: 850px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+#u_boot_console {
+	width: 100%;
+	text-align: center;
+	color: #348AF3;
+	font-weight: bold;
+	font-size: 36px;
+	padding-bottom: 30px;
+}
+
+#nav {
+	float: left;
+	width: 190px;
+	border: 1px solid;
+	border-color: #66ffcc;
+}
+
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav ul li a, a:visited {
+	padding: 10px;
+	width: 170px;
+	display: block;
+	background-color: transparent;
+	color: #7F7F7F;
+}
+
+#nav ul li a:hover {
+	background-color: #F5F5F5;
+	color: #348AF3;
+	font-weight: normal;
+}
+
+#page {
+	float: right;
+	width: 645px;
+}
+
+#fw_type {
+	width: 100%;
+	border: 1px solid;
+	border-color: #66ffcc;
+}
+
+#fw_type ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+#fw_type li {
+	float: left;
+	display: inline;
+	width: 50%;
+}
+
+#fw_type ul a {
+	padding: 5px 0 5px 0;
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+#fw_files {
+	margin-top: 20px;
+	width: 100;
+}
+
+#fw_files .th {
+	width: 150px;
+}
+
+#fw_options {
+	margin-top: 20px;
+}
+
+#freqs .th {
+	width: 40px;
+}
+
+#mac_modify .th {
+	width: 150px;
+}
+
+#freq_notice {
+	margin-top: 20px;
+	color: black;
+}
+
+#about {
+	margin-top: 20px;
+	color: black;
+	text-align: center;
+}
+
+.clearfloat {
+	clear: both;
+}
+
+.operate_success {
+	margin-top: 20px;
+	font-weight: bold;
+	color: green;
+}
+
+.current_nav {
+	background-color: #348AF3;
+	color: white;
+	font-weight: bold;
+	padding: 10px 10px 10px 10px;
+}
+
+.system_info {
+	border: none;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.w {
+	border-top: 1px solid;
+	border-color: #66ffcc;
+	padding-left: 10px;
+}
+
+.g {
+	border-top: 1px solid;
+	border-color: #66ffcc;
+	background-color: #F4F3F2;
+	padding-left: 10px;
+}
+
+.th {
+	border-right: 1px solid;
+	border-color: #66ffcc;
+	width: 100px;
+	font-weight: bold;
+	padding-left: 10px;
+}
+
+.ed {
+	border-bottom: 1px solid;
+	border-color: #66ffcc;
+}
+
+.fw_type_clicked {
+	background-color: #348AF3;
+	color: white;
+	font-weight: bold;
+}
+
+.fw_type_unclicked:hover {
+	background-color: #F5F5F5;
+	color: #348AF3;
+	cursor: pointer;
+}
+
+.fw_upload {
+	width: 100%;
+}
+
+.operate {
+	margin-top: 20px;
+}
+
+.freq {
+	font-weight: bold;
+	width: 55px;
+}
+
+.freq_item {
+	cursor: pointer;
+}
+
+.freq_cur {
+	background-color: #348AF3;
+	color: white;
+}

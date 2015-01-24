@@ -1,0 +1,179 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li class="current_nav">Firmware Upgrade</li>
+            	<li><a href="clock.html">Overclocking</a></li>
+            	<li><a href="mac.html">MAC Address</a></li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li><a href="backup.html">Firmware Backup</a></li>
+            	<li><a href="netcon.html">Network Console</a></li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div id="page">
+        	<form>
+            	<div id="fw_type">
+                	<ul>
+                    	<li><a id="fw_type_generic" class="fw_type_clicked">Generic firmware</a></li>
+                        <li><a id="fw_type_fullflash" class="fw_type_unclicked">Full flash firmware</a></li>
+                    </ul>
+					<div class="clearfloat"> </div>
+                </div>
+                <div id="fw_files">
+                	<div id="fw_files_generic">
+                        <table class="system_info">
+                            <tr>
+                                <td class="w th">
+                               		<input type="checkbox" name="uboot_check" id="uboot_check" value="1" onclick="check_checkbox('uboot_file', this)" />
+                                	<label for="uboot_check">U-Boot</label>
+                                </td>
+                                <td class="w">
+                                	<input type="file" name="uboot_file" id="uboot_file" class="fw_upload" onchange="hit_checkbox('uboot_check', this)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="g th">
+                                	<input type="checkbox" name="fw_check" id="fw_check" value="1" onclick="check_checkbox('fw_file', this)" />
+                                    <label for="fw_check">Firmware</label>
+                                    </td>
+                                <td class="g">
+                                	<input type="file" name="fw_file" id="fw_file" class="fw_upload" onchange="hit_checkbox('fw_check', this)" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="w th ed">
+                                	<input type="checkbox" name="art_check" id="art_check" value="1" onclick="check_checkbox('art_file', this)" />
+                                    <label for="art_check">ART</label>
+                                </td>
+                                <td class="w ed">
+                                	<input type="file" name="art_file" id="art_file" class="fw_upload" onchange="hit_checkbox('uboot_check', this)" />
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="fw_type" value="generic" />
+                    </div>
+                	<div id="fw_files_fullflash">
+                        <table class="system_info">
+                            <tr>
+                                <td class="w th ed">
+                               		<input type="checkbox" name="fullflash_check" id="fullflash_check" value="1" onclick="check_checkbox('fullflash_file', this)" />
+                                	<label for="fullflash_check">Full flash</label>
+                                </td>
+                                <td class="w ed">
+                                	<input type="file" name="fullflash_file" id="fullflash_file" class="fw_upload" onchange="hit_checkbox('fullflash_check', this)" />
+                                </td>
+                            </tr>
+                        </table>
+                        <input type="hidden" name="fw_type" value="fullflash" />
+                    </div>
+                </div>
+                <div id="fw_options">
+                	<div id="fw_autoreboot">
+                        <input type="checkbox" name="autoreboot" id="autoreboot" value="1" />
+                        <label for="autoreboot">Auto reboot</label>
+                    </div>
+                	<div id="fw_skipuboot">
+                        <input type="checkbox" name="skipuboot" id="skipuboot" value="1" />
+                        <label for="skipuboot">Drop U-Boot part</label>
+                    </div>
+                </div>
+                <div class="operate">
+                    <button type="submit" name="submit" value="Upload">Upload</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+				var fw_type_fullflash = document.getElementById("fw_type_fullflash");
+				var fw_type_generic = document.getElementById("fw_type_generic");
+				
+				var fw_files = document.getElementById("fw_files");
+				var fw_files_generic = document.getElementById("fw_files_generic");
+				var fw_files_fullflash = document.getElementById("fw_files_fullflash");
+				
+				var fw_options = document.getElementById("fw_options");
+				var fw_skipuboot = document.getElementById("fw_skipuboot");
+				
+				fw_files_fullflash.style.display = "none";
+				fw_files.removeChild(fw_files_fullflash);
+				document.body.appendChild(fw_files_fullflash);
+					
+				fw_skipuboot.style.display = "none";
+				fw_options.removeChild(fw_skipuboot);
+				document.body.appendChild(fw_skipuboot);
+						
+				fw_type_generic.onclick = function () {
+					if (fw_type_generic.className == "fw_type_clicked")
+						return;
+							
+					fw_type_fullflash.className = "fw_type_unclicked";
+					fw_type_generic.className = "fw_type_clicked";
+					
+					switch_to_generic();
+				}
+						
+				fw_type_fullflash.onclick = function () {
+					if (fw_type_fullflash.className == "fw_type_clicked")
+						return;
+							
+					fw_type_generic.className = "fw_type_unclicked";
+					fw_type_fullflash.className = "fw_type_clicked";
+					
+					switch_to_fullflash();
+				}
+				
+				function switch_to_generic () {
+					fw_files_fullflash.style.display = "none";
+					fw_files.removeChild(fw_files_fullflash);
+					document.body.appendChild(fw_files_fullflash);
+					
+					fw_skipuboot.style.display = "none";
+					fw_options.removeChild(fw_skipuboot);
+					document.body.appendChild(fw_skipuboot);	
+					
+					document.body.removeChild(fw_files_generic);
+					fw_files_generic.style.display = "block";
+					fw_files.appendChild(fw_files_generic);
+				}
+				
+				function switch_to_fullflash () {
+					document.body.removeChild(fw_files_fullflash);
+					fw_files_fullflash.style.display = "block";
+					fw_files.appendChild(fw_files_fullflash);
+					
+					document.body.removeChild(fw_skipuboot);	
+					fw_skipuboot.style.display = "block";
+					fw_options.appendChild(fw_skipuboot);
+					
+					fw_files.removeChild(fw_files_generic);
+					fw_files_generic.style.display = "none";
+					document.body.appendChild(fw_files_generic);
+				}
+
+				function hit_checkbox(id, filebin) {
+					if (filebin != undefined)
+						document.getElementById(id).checked = (filebin.value != "");
+				}
+
+				function check_checkbox(id, checkbox) {
+					if (!checkbox.checked)
+						document.getElementById(id).value = "";
+				}
+			</script>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>

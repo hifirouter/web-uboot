@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li><a href="upgrade.html">Firmware Upgrade</a></li>
+            	<li><a href="clock.html">Overclocking</a></li>
+            	<li><a href="mac.html">MAC Address</a></li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li class="current_nav">Firmware Backup</li>
+            	<li><a href="netcon.html">Network Console</a></li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div id="page">
+			<div id="freq_notice">
+                Click "Download" to download full flash firmware.<br />
+            </div>
+            <div class="operate">
+                <button type="button" onClick="window.open('/fwbackup.bin')">Download</button>
+            </div>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li><a href="upgrade.html">Firmware Upgrade</a></li>
+            	<li><a href="clock.html">Overclocking</a></li>
+            	<li class="current_nav">MAC Address</li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li><a href="backup.html">Firmware Backup</a></li>
+            	<li><a href="netcon.html">Network Console</a></li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div id="page">
+        	<form id="mac_modify">
+                <table class="system_info">
+                    <tr>
+                        <td class="w th">PIN</td>
+                        <td class="w"><input name="pin" id="pin" onkeydown="return input_check_dec(this, event)" value="<%=pin%>" size="8" maxlength="8" /></td>
+                    </tr>
+                    <tr>
+                        <td class="g th">eth MAC</td>
+                        <td class="g">
+	<input class="mac_field" name="mac0" id="mac0" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac0%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac1" id="mac1" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac1%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac2" id="mac2" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac2%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac3" id="mac3" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac3%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac4" id="mac4" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac4%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac5" id="mac5" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac5%>" size="2" maxlength="2" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w th">UBNT eth0 MAC</td>
+                        <td class="w">
+	<input class="mac_field" name="mac0" id="mac0" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac0%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac1" id="mac1" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac1%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac2" id="mac2" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac2%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac3" id="mac3" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac3%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac4" id="mac4" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac4%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac5" id="mac5" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac5%>" size="2" maxlength="2" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="g th">UBNT eth1 MAC</td>
+                        <td class="g">
+	<input class="mac_field" name="mac0" id="mac0" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac0%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac1" id="mac1" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac1%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac2" id="mac2" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac2%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac3" id="mac3" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac3%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac4" id="mac4" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac4%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac5" id="mac5" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac5%>" size="2" maxlength="2" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="w th ed">UBNT ath0 MAC</td>
+                        <td class="w ed">
+<input class="mac_field" name="mac0" id="mac0" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac0%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac1" id="mac1" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac1%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac2" id="mac2" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac2%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac3" id="mac3" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac3%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac4" id="mac4" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac4%>" size="2" maxlength="2" /> - 
+	<input class="mac_field" name="mac5" id="mac5" onkeydown="return input_check_hex(this, event)" onkeyup="return move(this)" value="<%=mac5%>" size="2" maxlength="2" />
+                        </td>
+                    </tr>
+                </table>
+				<div class="operate_success">
+                	Operation succeeded.<br />
+                </div>
+                <div class="operate">
+                    <button type="submit" name="submit" value="Modify">Modify</button>
+                </div>
+            </form>
+            <script type="text/javascript">
+				function input_check_hex(obj, e) {
+					var keynum = window.event ? e.keyCode : (e.which ? e.which : 0);
+					var result = false;
+							
+					if ((keynum == 8) || (keynum == 46)) result = true;
+					if (keynum >= 0x30 && keynum <= 0x39) result = true;
+					if (keynum >= 0x41 && keynum <= 0x46) result = true;
+					if (keynum >= 0x61 && keynum <= 0x66) result = true;
+				
+					return result;
+				}
+				
+				function input_check_dec(obj, e) {
+					var keynum = window.event ? e.keyCode : (e.which ? e.which : 0);
+					var result = false;
+							
+					if ((keynum == 8) || (keynum == 46)) result = true;
+					if (keynum >= 0x30 && keynum <= 0x39) result = true;
+				
+					return result;
+				}
+			</script>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>

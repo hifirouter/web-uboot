@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li><a href="upgrade.html">Firmware Upgrade</a></li>
+            	<li class="current_nav">Overclocking</li>
+            	<li><a href="mac.html">MAC Address</a></li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li><a href="backup.html">Firmware Backup</a></li>
+            	<li><a href="netcon.html">Network Console</a></li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+        <div id="page">
+        	<form id="freqs">
+                <table class="system_info">
+                    <tr>
+                        <td class="w th"></td>
+                        <td class="w freq">CPU</td>
+                        <td class="w freq">DDR</td>
+                        <td class="w freq">AHB</td>
+                        <td class="w"> </td>
+                    </tr>
+                    <tr class="freq_item">
+                        <td class="g th"><input type="radio" /></td>
+                        <td class="g">550</td>
+                        <td class="g">450</td>
+                        <td class="g">225</td>
+                        <td class="g"> </td>
+                    </tr>
+                    <tr class="freq_item freq_cur">
+                        <td class="w th"><input type="radio" checked="checked" /></td>
+                        <td class="w freq">560</td>
+                        <td class="w freq">450</td>
+                        <td class="w freq">225</td>
+                        <td class="w"> </td>
+                    </tr>
+                    <tr class="freq_item">
+                        <td class="g th"><input type="radio" /></td>
+                        <td class="g">570</td>
+                        <td class="g">450</td>
+                        <td class="g">225</td>
+                        <td class="g"> </td>
+                    </tr>
+                    <tr class="freq_item">
+                        <td class="w th ed"><input type="radio" /></td>
+                        <td class="w ed">580</td>
+                        <td class="w ed">450</td>
+                        <td class="w ed">225</td>
+                        <td class="w ed"> </td>
+                    </tr>
+                </table>
+                <div id="freq_notice">
+                	Notice: If the device can not boot up after overclocking, please press RESET/WPS button and then power on to boot up at default frequency.
+                </div>
+				<div class="operate_success">
+                	Operation succeeded.<br />
+                    Please reboot this device to let it take effect.
+                </div>
+                <div class="operate">
+                    <button type="submit" name="submit" value="Change">Change</button>
+                </div>
+            </form>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>U-Boot Console</title>
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+	<div id="container">
+    	<div id="u_boot_console">
+        	U-Boot Console
+        </div>
+        <div id="nav">
+        	<ul>
+            	<li><a href="index.html">System Information</a></li>
+            	<li><a href="upgrade.html">Firmware Upgrade</a></li>
+            	<li><a href="clock.html">Overclocking</a></li>
+            	<li><a href="mac.html">MAC Address</a></li>
+            	<li><a href="reset.html">Factory Reset</a></li>
+            	<li><a href="backup.html">Firmware Backup</a></li>
+            	<li><a href="netcon.html">Network Console</a></li>
+            	<li><a href="reboot.html">Device Reboot</a></li>
+            	<li class="current_nav">About</li>
+            </ul>
+        </div>
+        <div id="page">
+        	<form>
+            	<div id="about">
+                	U-Boot Console fot U-Boot 1.1.4<br />
+                    Based on GPL source codes from TP-LINK, Netgear and D-LINK.<br />
+                    Project Homepage: <a href="https://https://github.com/hifirouter" target="_blank">https://https://github.com/hifirouter</a><br />
+                    Contact author: mleaf90@gmail.com<br />
+                </div>
+                <br />
+                <label>Language:</label>
+                <select name="lang">
+                	<option value="auto">Automaticly detect (English default)</option>
+                	<option value="zh-CN">Simplified Chinese</option>
+                </select>
+                <div class="operate">
+                    <button type="submit" name="submit" value="Save">Save</button>
+                </div>
+            </form>
+        </div>
+        <div class="clearfloat"> </div>
+    </div>
+</body>
+</html>
